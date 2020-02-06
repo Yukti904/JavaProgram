@@ -8,9 +8,7 @@ class Employee{
         this.name = name;
         this.age=age;
     }
-    Employee(){
 
-    }
  
  
     public String getName(){
