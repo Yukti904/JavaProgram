@@ -6,6 +6,17 @@ import java.util.Scanner;
 import java.io.BufferedReader;
 
 class ReplaceWord{	
+	public static void main(String[] args)
+	{
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter the string to be modified : ");
+		String old = scan.nextLine();
+		System.out.println("Enter the string to be replaced :");
+		String newS = scan.nextLine();
+		modifyFile("C:/javaprograms/MyFile.txt", old, newS);
+		
+		
+	}
 	static void modifyFile(String file, String old, String newS){
 		File fileModified = new File(file);	
 		String oc = "";
@@ -36,15 +47,5 @@ class ReplaceWord{
 		}
 	}
 	
-	public static void main(String[] args)
-	{
-		Scanner scan = new Scanner(System.in);
-		System.out.println("Enter the string to be modified : ");
-		String old = scan.nextLine();
-		System.out.println("Enter the string to be replaced :");
-		String newS = scan.nextLine();
-		modifyFile("C:/javaprograms/MyFile.txt", old, newS);
-		
-		
-	}
+	
 }
