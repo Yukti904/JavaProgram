@@ -5,7 +5,7 @@ import java.io.FileReader;
 import java.util.Scanner;
 import java.io.BufferedReader;
 
-public class ReplaceWord{	
+class ReplaceWord{	
 	static void modifyFile(String file, String old, String newS){
 		File fileModified = new File(file);	
 		String oc = "";
