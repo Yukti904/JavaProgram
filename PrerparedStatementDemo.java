@@ -1,9 +1,9 @@
 package com.ibm.training;
 import java.util.Scanner;
 import java.util.*;
-
+import java.io.BufferedReader;
 import java.sql.*;
-
+import java.io.*;
 
 public class PrerparedStatementDemo {
 
@@ -267,7 +267,42 @@ public class PrerparedStatementDemo {
 public void insertData(Connection dbCon) {
 	Scanner scan = new Scanner(System.in);
 	String query = "insert into employeedetails value(?,?,?,?)";
-	try {
+	
+	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));  
+	  try {
+	do{  
+		System.out.println("Enter name:");  
+		String name=br.readLine();
+	System.out.println("Enter id:");  
+	int id=Integer.parseInt(br.readLine());  
+	  
+	
+	System.out.println("Enter designation:");
+	String designation = br.readLine();
+	System.out.println("Enter salary:");  
+	int salary=Integer.parseInt(br.readLine());
+	pstmt = dbCon.prepareStatement(query);
+	
+	  
+	pstmt.setString(1,name);  
+	pstmt.setInt(2,id);  
+	pstmt.setString(3,designation);
+	pstmt.setInt(4,salary);
+	int i=pstmt.executeUpdate();  
+	System.out.println("Records affected");  
+	  
+	System.out.println("Do you want to continue: y/n");  
+	String s=br.readLine();  
+	if(s.startsWith("n")){  
+	break;  
+	}  
+	}while(true);  
+	  }
+	  catch(Exception e) {
+		  System.out.println("Exception while inserting " + e.getMessage());
+	  }
+	  
+	/*try {
 	System.out.println("Enter employee name");
 	String name = scan.nextLine();
 	System.out.println("Enter employee id");
@@ -291,8 +326,9 @@ public void insertData(Connection dbCon) {
 	} catch (SQLException e) {
 		System.out.println("Exception while inserting " + e.getMessage());
 	}
-}
+}*/
 	
+}
 }
 
 
