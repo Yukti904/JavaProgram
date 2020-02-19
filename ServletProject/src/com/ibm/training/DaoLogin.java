@@ -18,8 +18,8 @@ public class DaoLogin extends HttpServlet {
 	PreparedStatement pstmt;
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String usName = request.getParameter("userName");
-		String pWord = request.getParameter("passWord");
+		String userName = request.getParameter("userName");
+		String passWord = request.getParameter("passWord");
 		
 		String inputQuery= "INSERT INTO userdata VALUES(?,?)";
 		
@@ -27,8 +27,8 @@ public class DaoLogin extends HttpServlet {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection dbCon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ibmservletdata?serverTimezone=UTC", "root", "");
 			pstmt = dbCon.prepareStatement(inputQuery);
-			pstmt.setString(1, usName);
-			pstmt.setString(2, pWord);
+			pstmt.setString(1, userName);
+			pstmt.setString(2, passWord);
 			if(pstmt.executeUpdate()<0)
 				System.out.println("You are registered");
 		} catch (SQLException e) {
