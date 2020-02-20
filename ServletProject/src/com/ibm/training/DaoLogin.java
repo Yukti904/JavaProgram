@@ -25,7 +25,7 @@ public class DaoLogin extends HttpServlet {
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection dbCon = DriverManager.getConnection("jdbc:mysql://localhost:3306/ibmservletdata?serverTimezone=UTC", "root", "");
+			Connection dbCon = DriverManager.getConnection("jdbc:mysql://localhost:3307/ibmservletdata?serverTimezone=UTC", "root", "");
 			pstmt = dbCon.prepareStatement(inputQuery);
 			pstmt.setString(1, userName);
 			pstmt.setString(2, passWord);
