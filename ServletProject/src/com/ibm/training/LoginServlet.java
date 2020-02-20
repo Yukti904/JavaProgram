@@ -46,14 +46,14 @@ public class LoginServlet extends HttpServlet {
 				pstmt = dbCon.prepareStatement(Query);
 				ResultSet rs = pstmt.executeQuery();
 				if (rs.next()) {
-					if (userName.trim().equals(rs.getString("userName")))
+					if (userName.trim().equals(rs.getString("Name")))
 						n = n + 1;
 				}
 				pstmt = dbCon.prepareStatement(PassWord);
 				pstmt.setString(1, userName);
 				rs = pstmt.executeQuery();
 				if (rs.next()) {
-					if (passWord.trim().equals(rs.getString("passWord")))
+					if (passWord.trim().equals(rs.getString("Password")))
 						n = n + 1;
 				}
 				request.getSession().getAttribute("userName");
