@@ -18,8 +18,8 @@ public class DaoLogin extends HttpServlet {
 	PreparedStatement pstmt;
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String userName = request.getParameter("userName");
-		String passWord = request.getParameter("passWord");
+		String userName = request.getParameter("Name");
+		String passWord = request.getParameter("Password");
 		
 		String inputQuery= "INSERT INTO userdata VALUES(?,?)";
 		
