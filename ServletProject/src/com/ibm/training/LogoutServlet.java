@@ -18,12 +18,13 @@ public class LogoutServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		
 		if(request.getSession(false)==null) {
-			out.println("<br> Session Ended <br><br>");
+			out.println("<br> your session has ended <br><br>");
 			RequestDispatcher dispatch = request.getRequestDispatcher("index.html");
 			dispatch.include(request, response);
 		}
 		else
 			request.getSession().invalidate();
+		response.sendRedirect("index.html");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
