@@ -17,7 +17,7 @@ public class HomeServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		HttpSession session = request.getSession();
-		session.setAttribute("userName",request.getParameter("userName"));
+		session.setAttribute("userName",request.getParameter("Name"));
 		RequestDispatcher dispatch = request.getRequestDispatcher("login.html");
 		dispatch.include(request, response);
 	}
