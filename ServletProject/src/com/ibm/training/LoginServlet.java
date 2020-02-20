@@ -33,8 +33,8 @@ public class LoginServlet extends HttpServlet {
 		} else {
 			int n = 0;
 			RequestDispatcher dispatch = null;
-			String userName = request.getParameter("userName");
-			String passWord = request.getParameter("passWord");
+			String userName = request.getParameter("Name");
+			String passWord = request.getParameter("Password");
 			out.println("<br> user name is: " + userName);
 
 			String Query = "SELECT Name FROM userdata";
