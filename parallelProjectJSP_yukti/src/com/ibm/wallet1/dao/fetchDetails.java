@@ -27,7 +27,7 @@ public class fetchDetails extends HttpServlet {
 	
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			dbcon=DriverManager.getConnection("jdbc:mysql://localhost:3307/Parallel_Project?serverTimezone=UTC","root","");
+			dbcon=DriverManager.getConnection("jdbc:mysql://localhost:3307/ibmservletdata?serverTimezone=UTC","root","");
 			System.out.println("Connected");
 	
 			Statement stmt = dbcon.createStatement();

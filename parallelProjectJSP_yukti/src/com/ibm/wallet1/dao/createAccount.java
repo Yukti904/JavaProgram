@@ -28,13 +28,13 @@ public class createAccount extends HttpServlet {
 		
 	try {
 			Class.forName("com.mysql.jdbc.Driver");
-			dbcon=DriverManager.getConnection("jdbc:mysql://localhost:3307/Parallel_Project?serverTimezone=UTC","root","");
+			dbcon=DriverManager.getConnection("jdbc:mysql://localhost:3307/ibmservletdata?serverTimezone=UTC","root","");
 			System.out.println("Connected");
 			
 //Insert into the database:	
 			String phonenumber = request.getParameter("phonenumber");
 			
-			String inQry="INSERT INTO 'accountdetails`(`Name`, `PhoneNumber`, `Account_type`, `balance`) VALUES (?,?,?,?)";
+			String inQry="INSERT INTO 'accountdetails`(`Name`, `phoneNumber`, `Account_type`, `Balance`) VALUES (?,?,?,?)";
 			pstmt=dbcon.prepareStatement(inQry);
 			pstmt.setString(1, request.getParameter("customer name"));
 			pstmt.setString(2, phonenumber);
@@ -43,8 +43,8 @@ public class createAccount extends HttpServlet {
 			pstmt.execute();
 			
 		out1.println("Account Created Successfully..." + request.getParameter("customer name"));
-		RequestDispatcher rd = request.getRequestDispatcher("AccountID.jsp");
-		rd.include(request, response);
+			/* RequestDispatcher rd = request.getRequestDispatcher("AccountID.jsp"); */
+			/* rd.include(request, response); */
 		
 		}
 		

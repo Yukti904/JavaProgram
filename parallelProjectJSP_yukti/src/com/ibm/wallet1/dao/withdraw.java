@@ -30,7 +30,7 @@ public class withdraw extends HttpServlet {
 	//Database Connectivity
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			dbcon=DriverManager.getConnection("jdbc:mysql://localhost:3307/Parallel_Project?serverTimezone=UTC","root","");
+			dbcon=DriverManager.getConnection("jdbc:mysql://localhost:3307/ibmservletdata?serverTimezone=UTC","root","");
 			System.out.println("Connected");
 			
 	//Deposit and update the balance and update in transaction table:

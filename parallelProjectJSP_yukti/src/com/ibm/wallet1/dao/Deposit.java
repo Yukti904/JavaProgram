@@ -39,7 +39,7 @@ public class Deposit extends HttpServlet {
 			int updatedbalance = 0;
 			ResultSet rs = pstmt.executeQuery();
 			while (rs.next()) {
-				int currentbalance = rs.getInt("balance");
+				int currentbalance = rs.getInt("Balance");
 				// System.out.println("Current Balance : " + currentbalance );
 				updatedbalance = currentbalance + amount;
 				// System.out.println("Updated balance : " +updatedbalance);

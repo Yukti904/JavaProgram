@@ -77,7 +77,7 @@ public class fundTransfer extends HttpServlet {
 	         pstmt.setInt(2, toacc);
 	         pstmt.executeUpdate();
 	         
-	         String Qry3 = "INSERT INTO transactiondetails(id, Time, FromAccID, ToAccID) VALUES (NULL,current_timestamp(),?,?)";
+	         String Qry3 = "INSERT INTO trandetails(id, Time, FromAccID, ToAccID) VALUES (NULL,current_timestamp(),?,?)";
 	         
 	         pstmt = dbcon.prepareStatement(Qry3);
 	         pstmt.setInt(1, fromacc);
