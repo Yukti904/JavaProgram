@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<beans xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd" xmlns:context="http://www.springframework.org/schema/context" xmlns:aop="http://www.springframework.org/schema/aop" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/beans">
+
+<!-- Register the bean for Data Source -->
+
+
+
+<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+
+<!-- #1 -->
+
+
+<property value="com.mysql.cj.jdbc.Driver" name="driverClassName"/>
+
+<!-- #2 -->
+
+
+<property value="jdbc:mysql://localhost:3306/ibmuserdata?serverTimezone=IST" name="url"/>
+
+<property value="root" name="username"/>
+
+<property value="" name="password"/>
+
+</bean>
+
+<bean id="UI" class="com.ibm.springUI.UI"/>
+
+<bean id="service" class="com.ibm.springService.serviceClass"/>
+
+<bean id="repository" class="com.ibm.springDao.daoClass"/>
+
+<context:annotation-config/>
+
+<context:component-scan base-package="com.ibm.springBean"/>
+
+<context:component-scan base-package="com.ibm.springDao"/>
+
+<context:component-scan base-package="com.ibm.springParallel"/>
+
+<context:component-scan base-package="com.ibm.springUI"/>
+
+</beans>
